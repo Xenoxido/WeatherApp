@@ -1,1 +1,5 @@
-<p>city-list works!</p>
+<div class="body">
+    <div class="city-list">
+        <app-city-card *ngFor="let city of cityList" [city]="city"></app-city-card>
+    </div>
+</div>
