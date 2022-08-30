@@ -1,0 +1,23 @@
+<div class="city-current-body">
+    <div class="first-container">
+        <h1>{{ cityCurrent?.temp }}</h1>
+        <h1>{{ (cityCurrent ? cityCurrent.weather_code : 100) | weatherLabel }}</h1>
+    </div>
+    <div class="vertical-divider"></div>
+    <div class="second-container">
+        <div id="labels">
+            <h2>{{ 'Apparent temperature' }}</h2>
+            <h2>{{ 'Humidity' }}</h2>
+            <h2>{{ 'Wind' }}</h2>
+            <h2>{{ 'Rain' }}</h2>
+            <h2>{{ 'Pressure' }}</h2>
+        </div>
+        <div id="info">
+            <h2>{{ cityCurrent?.apparent_temp }}</h2>
+            <h2>{{ cityCurrent?.humidity }}</h2>
+            <h2>{{ cityCurrent?.wind }}</h2>
+            <h2>{{ cityCurrent?.rain }}</h2>
+            <h2>{{ cityCurrent?.pressure }}</h2>
+        </div>
+    </div>
+</div>

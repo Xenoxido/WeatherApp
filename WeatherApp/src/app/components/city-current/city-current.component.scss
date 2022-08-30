@@ -1,0 +1,44 @@
+.city-current-body {
+    padding-top: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: max-content;
+}
+
+.first-container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5% ;
+    min-width: 30%;
+}
+
+.vertical-divider {
+    border-right: 5px solid #16222c; 
+}
+
+.second-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 5%;
+    min-width: 30%;
+
+    >#labels {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        min-width: max-content;
+        padding-right: 10%;
+    }
+
+    >#info {
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        min-width: max-content;
+    }
+}

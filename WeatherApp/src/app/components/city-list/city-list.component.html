@@ -6,6 +6,6 @@
         <app-city-card *ngFor="let city of cityList" [city]="city" (selectCity)="onClickCity($event)"></app-city-card>
     </div>
     <div class="city-info" *ngIf="selectedCity">
-        <app-city-info></app-city-info>
+        <app-city-current [cityCurrent]="citySelected"></app-city-current>
     </div>
 </div>
