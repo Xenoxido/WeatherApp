@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { GeocodeService } from 'src/app/services/geocoding.service';
-import { Cities } from 'src/app/data/cities';
 import { CityGeocode } from 'src/app/models/cityGeocode';
 
 @Component({
@@ -10,14 +9,24 @@ import { CityGeocode } from 'src/app/models/cityGeocode';
 })
 export class CityListComponent implements OnInit {
 
+  cityName: string = '';
   cityList: CityGeocode[] = [];
+  selectedCity : boolean = false;
   constructor( private _geocodeService: GeocodeService) { }
 
   ngOnInit(): void {
-    Cities.forEach((cityName) => {
-      this._geocodeService.getCityGeocodeByName(cityName).subscribe((cityGeocodeResults)=>{
-        this.cityList.push(cityGeocodeResults[0]); // Only appends the first city with the searching name
+  }
+
+  findCities():void {
+    this.selectedCity = false;
+    this._geocodeService.getCityGeocodeByName(this.cityName).subscribe((cityGeocodeResults)=>{
+      cityGeocodeResults.forEach((city)=>{
+        this.cityList.push(city);
       });
     });
+  }
+
+  onClickCity(city:CityGeocode):void{
+    this.selectedCity = true;
   }
 }

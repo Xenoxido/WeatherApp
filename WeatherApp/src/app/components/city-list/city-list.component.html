@@ -1,5 +1,11 @@
 <div class="body">
-    <div class="city-list">
-        <app-city-card *ngFor="let city of cityList" [city]="city"></app-city-card>
+    <div class="city-finder">
+        <input [(ngModel)]="cityName" (change)="findCities()">
+    </div>
+    <div class="city-list" *ngIf="!selectedCity">
+        <app-city-card *ngFor="let city of cityList" [city]="city" (selectCity)="onClickCity($event)"></app-city-card>
+    </div>
+    <div class="city-info" *ngIf="selectedCity">
+        <app-city-info></app-city-info>
     </div>
 </div>
